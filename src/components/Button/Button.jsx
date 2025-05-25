@@ -1,11 +1,12 @@
-import React from 'react';
-import styles from './Button.module.css';
+import React from "react";
+import styles from "./Button.module.css";
+import "../../styles/_variables.css";
 
-const Button = ({ 
-  children, 
-  onClick, 
-  variant = 'primary', 
-  disabled = false 
+const Button = ({
+  children,
+  onClick,
+  variant = "primary",
+  disabled = false,
 }) => {
   const handleClick = (e) => {
     if (!disabled && onClick) {
@@ -20,7 +21,7 @@ const Button = ({
       className={`
         ${styles.button} 
         ${styles[variant]} 
-        ${disabled ? styles.disabled : ''}
+        ${disabled ? styles.disabled : ""}
       `}
     >
       {children}

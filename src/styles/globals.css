@@ -1,9 +1,9 @@
-@import './_reset.css';
-@import './_variables.css';
+@import "./_reset.css";
+@import "./_variables.css";
 
 /* Estilos globais (opcional) */
 body {
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: "Segoe UI", system-ui, sans-serif;
   background-color: var(--color-gray-soft);
   color: var(--color-gray-dark);
 }

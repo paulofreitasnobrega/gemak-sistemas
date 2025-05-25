@@ -1,13 +1,10 @@
-import React from 'react';
-import './App.css';
-import Button from './components/Button/Button.jsx';
-
-
+import React from "react";
+import "./App.css";
+import Button from "./components/Button/Button.jsx";
 
 const App = () => {
-
   const handleClick = () => {
-    console.log('Botão clicado!');
+    console.log("Botão clicado!");
     // Adicione sua lógica aqui
   };
 
@@ -17,13 +14,11 @@ const App = () => {
         Salvar
       </Button>
 
-      <Button variant="secondary">
-        Cancelar
-      </Button>
+      <Button variant="secondary">Cancelar</Button>
 
       <Button variant="danger" disabled>
         Excluir
-      </Button>      
+      </Button>
     </div>
   );
 };
