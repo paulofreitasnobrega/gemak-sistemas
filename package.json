@@ -1,0 +1,65 @@
+{
+  "name": "gemak-forms",
+  "version": "1.0.0",
+  "description": "Aplicativo de formulários Gemak",
+  "main": "public/electron.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "concurrently -k \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && npm run electron-start\"",
+    "react-start": "react-scripts start",
+    "electron-start": "electron .",
+    "pack": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron-pack": "electron-builder -c.extraMetadata.main=build/electron.js",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "com.gemak.forms",
+    "productName": "Gemak Forms",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "src/assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "src/assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "src/assets/icon.png"
+    }
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "cross-env": "^7.0.3",
+    "electron": "^25.3.0",
+    "electron-builder": "^24.4.0",
+    "wait-on": "^7.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
