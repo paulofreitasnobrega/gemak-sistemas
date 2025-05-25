@@ -1,15 +1,31 @@
 import React from 'react';
 import './App.css';
+import Button from './components/Button/Button.jsx';
 
-function App() {
+
+
+const App = () => {
+
+  const handleClick = () => {
+    console.log('Botão clicado!');
+    // Adicione sua lógica aqui
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Testando o sistema Gemak</h1>
-        <p>Realizando os primeiros passos com React e Electron</p>
-      </header>
+    <div className="app-container">
+      <Button onClick={handleClick} variant="primary">
+        Salvar
+      </Button>
+
+      <Button variant="secondary">
+        Cancelar
+      </Button>
+
+      <Button variant="danger" disabled>
+        Excluir
+      </Button>      
     </div>
   );
-}
+};
 
 export default App;

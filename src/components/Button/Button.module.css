@@ -1,0 +1,46 @@
+/* Estilo base */
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-align: center;
+  font-family: inherit; /* Herda a fonte do projeto */
+}
+
+/* Variantes */
+.primary {
+  background-color: #2978b5;
+  color: white;
+}
+
+.primary:hover:not(.disabled) {
+  background-color: #1d5a8a;
+}
+
+.secondary {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+.secondary:hover:not(.disabled) {
+  background-color: #d1d5db;
+}
+
+.danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.danger:hover:not(.disabled) {
+  background-color: #bb2d3b;
+}
+
+/* Estados */
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

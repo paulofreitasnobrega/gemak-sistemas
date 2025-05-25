@@ -1,3 +1,7 @@
+try {
+  require('electron-reloader')(module);
+} catch (_) {}
+
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
@@ -17,7 +21,7 @@ function createWindow() {
 
   if (isDev) {
     mainWindow.loadURL('http://localhost:3000');
-    mainWindow.webContents.openDevTools(); // DevTools em modo dev
+    mainWindow.webContents.openDevTools();
   } else {
     mainWindow.loadFile(path.join(__dirname, '../build/index.html'));
   }
