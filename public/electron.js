@@ -1,6 +1,8 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
+const isDev = process.env.NODE_ENV === 'development';
+
 function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 1200,
@@ -13,11 +15,11 @@ function createWindow() {
     title: 'Gemak Forms'
   });
 
-  mainWindow.loadFile(path.join(__dirname, '../build/index.html'));
-
-  // Open the DevTools in development mode
-  if (process.env.NODE_ENV === 'development') {
-    mainWindow.webContents.openDevTools();
+  if (isDev) {
+    mainWindow.loadURL('http://localhost:3000');
+    mainWindow.webContents.openDevTools(); // DevTools em modo dev
+  } else {
+    mainWindow.loadFile(path.join(__dirname, '../build/index.html'));
   }
 }
 

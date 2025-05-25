@@ -5,8 +5,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hello World from Gemak Forms!</h1>
-        <p>Welcome to your Electron + React application</p>
+        <h1>Testando o sistema Gemak</h1>
+        <p>Realizando os primeiros passos com React e Electron</p>
       </header>
     </div>
   );
